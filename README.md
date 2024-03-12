@@ -44,10 +44,8 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 		</td>
 		<td width="200px">
 			<p align="center">
-				<picture>
-					![Uploading Table-1.png…]()
-					
-				</picture>
+			![Table-1](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/4e961fa4-5ee4-4982-8759-139f8a31b9c2)
+
 			</p>
 		</td>
 	</tr>
@@ -72,14 +70,9 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 ## Screenshots
 
 #### Restaurant Menu:
-<p align="center">
-	![image](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/b9136269-5e36-4873-ac99-485e24c45029)
 
 	![Screenshot 2024-03-12 084953](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/8a827dd7-d43e-4535-8d6d-96bcd704500f)
 
-</p>
 
 #### Admin Dashboard:
-<p align="center">
 	![Screenshot 2024-03-12 084243](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/aa117931-e0af-4de0-991f-4f53f8c5bc85)
-</p>

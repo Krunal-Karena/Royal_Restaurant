@@ -70,7 +70,7 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 
 #### Restaurant Menu:
 ![Screenshot 2024-03-12 084953](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/8a827dd7-d43e-4535-8d6d-96bcd704500f)
-
+![Screenshot 2024-03-12 085031](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/6ea9841b-fbff-43ab-a4ab-a1779cb0a648)
 
 #### Admin Dashboard:
 ![Screenshot 2024-03-12 084243](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/aa117931-e0af-4de0-991f-4f53f8c5bc85)

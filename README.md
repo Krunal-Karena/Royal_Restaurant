@@ -1,9 +1,10 @@
-<img src="public/screenshots/restaurant_banner.jpg" width="100%">
+![image](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/a1429a5c-b7f1-4548-9847-f9d1ae0f6613)
+
 <br>
 
-# OrderWorder - Contactless Dining Experience
+# Royal Rastaurant - Contactless Dining Experience
 
-Introducing OrderWorder, our Contactless Dining Full-Stack Platform! This groundbreaking platform transforms the dining experience, enabling restaurants to effortlessly swap out traditional menus with a digital, contactless solution.
+Introducing Royal Rastaurant, our Contactless Dining Full-Stack Platform! This groundbreaking platform transforms the dining experience, enabling restaurants to effortlessly swap out traditional menus with a digital, contactless solution.
 
 ## Features
 
@@ -15,7 +16,7 @@ Introducing OrderWorder, our Contactless Dining Full-Stack Platform! This ground
 
 ## Tech Stack
 
-- **FullStack**: Next.js and SASS
+- **FullStack**: Next.js
 - **Database**: Mongo
 
 ## How to Use
@@ -34,7 +35,7 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 		<td>
 			<ul>
 				<img src="public/screenshots/px.png" width="0px" height="0px">
-				<li>Goto <a href="https://orderworder.ritik.me/starbucks?table=1">Starbucks Menu Page</a> or Scan the QR Code</li>
+				<li>Goto <a href="http://localhost:3000/royal11?table=1&tab=menu&category=&search=">Royal Rastaurant Menu Page</a> or Scan the QR Code</li>
 				<li>Click on order button</li>
 				<li>Enter Name and Phone (10 digit number format)</li>
 				<li>Login complete, now add few items in cart and place order</li>
@@ -44,9 +45,8 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 		<td width="200px">
 			<p align="center">
 				<picture>
-					<source media="(prefers-color-scheme: dark)" srcset="public/screenshots/restaurant_qrcode_dark.png" />
-					<source media="(prefers-color-scheme: light)" srcset="public/screenshots/restaurant_qrcode_light.png" />
-					<img alt="OrderWorderQR" src="public/screenshots/restaurant_qr_light.png" />
+					![Uploading Table-1.png…]()
+					
 				</picture>
 			</p>
 		</td>
@@ -60,8 +60,8 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 			<ul>
 				<img src="public/screenshots/px.png" width="0px" height="0px">
 				<li>Goto <a href="https://orderworder.ritik.me">Homepage</a>, and scroll down to login section</li>
-				<li>Enter email: <code>admin@starbucks.com</code></li>
-				<li>Enter password: <code>starbucks@123</code></li>
+				<li>Enter email: <code>admin@royal.com</code></li>
+				<li>Enter password: <code>admin@123</code></li>
 				<li>Login complete, Now visit <a href="https://orderworder.ritik.me/dashboard">Admin Dashboard</a> or <a href="https://orderworder.ritik.me/kitchen">Kitchen Dashboard</a></li>
 				<img src="public/screenshots/px.png" width="700px" height="0px">
 			</ul>
@@ -73,12 +73,13 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 
 #### Restaurant Menu:
 <p align="center">
-	<img src="public/screenshots/restaurant_menu.png" width="49%">
-	<img src="public/screenshots/restaurant_cart.png" width="49%">
+	![image](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/b9136269-5e36-4873-ac99-485e24c45029)
+
+	![Screenshot 2024-03-12 084953](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/8a827dd7-d43e-4535-8d6d-96bcd704500f)
+
 </p>
 
 #### Admin Dashboard:
 <p align="center">
-	<img src="public/screenshots/dashboard_requests.png" width="49%">
-	<img src="public/screenshots/dashboard_active.png" width="49%">
+	![Screenshot 2024-03-12 084243](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/aa117931-e0af-4de0-991f-4f53f8c5bc85)
 </p>

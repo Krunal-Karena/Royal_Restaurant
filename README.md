@@ -1,9 +1,9 @@
 <img src="public/screenshots/restaurant_banner.jpg" width="100%">
 <br>
 
-# OrderWorder - Contactless Dining Experience
+# RoyalRestaurant - Contactless Dining Experience
 
-Introducing OrderWorder, our Contactless Dining Full-Stack Platform! This groundbreaking platform transforms the dining experience, enabling restaurants to effortlessly swap out traditional menus with a digital, contactless solution.
+Introducing RoyalRestaurant, our Contactless Dining Full-Stack Platform! This groundbreaking platform transforms the dining experience, enabling restaurants to effortlessly swap out traditional menus with a digital, contactless solution.
 
 ## Features
 
@@ -26,7 +26,7 @@ Introducing OrderWorder, our Contactless Dining Full-Stack Platform! This ground
 4. **Kitchen Dashboard**: Chefs can use the kitchen dashboard to stay updated on live orders for timely preparation.
 
 ## Try it out
-Orderworder has two interfaces, one for **customers** and one for **restaurant's admin**.
+RoyalRestaurant has two interfaces, one for **customers** and one for **restaurant's admin**.
 
 ### Customer Login:
 <table>
@@ -34,7 +34,7 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 		<td>
 			<ul>
 				<img src="public/screenshots/px.png" width="0px" height="0px">
-				<li>Goto <a href="https://orderworder.ritik.me/starbucks?table=1">Starbucks Menu Page</a> or Scan the QR Code</li>
+				<li>Goto <a href="https://RoyalRestaurant.ritik.me/starbucks?table=1">Starbucks Menu Page</a> or Scan the QR Code</li>
 				<li>Click on order button</li>
 				<li>Enter Name and Phone (10 digit number format)</li>
 				<li>Login complete, now add few items in cart and place order</li>
@@ -46,7 +46,7 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 				<picture>
 					<source media="(prefers-color-scheme: dark)" srcset="public/screenshots/restaurant_qrcode_dark.png" />
 					<source media="(prefers-color-scheme: light)" srcset="public/screenshots/restaurant_qrcode_light.png" />
-					<img alt="OrderWorderQR" src="public/screenshots/restaurant_qr_light.png" />
+					<img alt="RoyalRestaurantQR" src="public/screenshots/restaurant_qr_light.png" />
 				</picture>
 			</p>
 		</td>
@@ -59,10 +59,10 @@ Orderworder has two interfaces, one for **customers** and one for **restaurant's
 		<td>
 			<ul>
 				<img src="public/screenshots/px.png" width="0px" height="0px">
-				<li>Goto <a href="https://orderworder.ritik.me">Homepage</a>, and scroll down to login section</li>
+				<li>Goto <a href="https://RoyalRestaurant.ritik.me">Homepage</a>, and scroll down to login section</li>
 				<li>Enter email: <code>admin@starbucks.com</code></li>
 				<li>Enter password: <code>starbucks@123</code></li>
-				<li>Login complete, Now visit <a href="https://orderworder.ritik.me/dashboard">Admin Dashboard</a> or <a href="https://orderworder.ritik.me/kitchen">Kitchen Dashboard</a></li>
+				<li>Login complete, Now visit <a href="https://RoyalRestaurant.ritik.me/dashboard">Admin Dashboard</a> or <a href="https://RoyalRestaurant.ritik.me/kitchen">Kitchen Dashboard</a></li>
 				<img src="public/screenshots/px.png" width="700px" height="0px">
 			</ul>
 		</td>

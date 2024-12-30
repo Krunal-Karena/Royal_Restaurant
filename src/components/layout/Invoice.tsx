@@ -1,13 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
+
+import jsPDF from 'jspdf';
+import 'jspdf-html2canvas';
 import { Button } from 'xtreme-ui';
 
 import './invoice.scss';
 
 const InvoiceBillItem = (props) => {
-	return (<div className='invoiceBillItem'>
-		<p className='billName'>{props.name + (props.taxPercent ? ` (${props.taxPercent}%)` : '')}</p>
-		<p className='billAmount rupee'>{props.amount}</p>
-	</div>);
+	return (
+		<div className='invoiceBillItem'>
+			<p className='billName'>
+				{props.name + (props.taxPercent ? ` (${props.taxPercent}%)` : '')}
+			</p>
+			<p className='billAmount rupee'>{props.amount}</p>
+		</div>
+	);
 };
 
 const Invoice = (props: TInvoiceProps) => {
@@ -18,7 +25,26 @@ const Invoice = (props: TInvoiceProps) => {
 	const [grandTotal, setGrandTotal] = useState(0);
 
 	const downloadPDF = () => {
-		invoiceRef.current.save();
+		const pdf = new jsPDF();
+		const invoiceElement = invoiceRef?.current;
+		console.log('invoiceRef.current:', invoiceRef?.current);
+		if (!invoiceElement) {
+			console.error(
+				'invoiceRef is not defined or doesn\'t point to a valid DOM element.',
+			);
+			return;
+		}
+
+		pdf.html(invoiceElement, {
+			callback: (doc) => {
+				doc.save('invoice.pdf');
+			},
+			x: 1,
+			y: 1,
+			html2canvas: {
+				scale: 0.6,
+			},
+		});
 	};
 
 	useEffect(() => {
@@ -32,33 +58,45 @@ const Invoice = (props: TInvoiceProps) => {
 
 	return (
 		<div className='invoiceWrapper'>
-			<div className='invoice'>
+			<div className='invoice' ref={invoiceRef}>
 				<div className='invoiceItems'>
 					<h6 className='invoiceItemsHeading'>Your Order Summary</h6>
 					<hr />
-					<h6 align='left' className='invoiceHeadingDetails'>Invoice Number: <span>{props.order.invoiceNumber}</span></h6>
-					<h6 align='left' className='invoiceHeadingDetails'>Customer Name: <span>{props?.order?.customer?.fname} {props?.order?.customer?.lname}</span></h6>
+					{/* <h6 align='left' className='invoiceHeadingDetails'>Invoice Number: <span>{props.order.invoiceNumber}</span></h6> */}
+					<h6 align='left' className='invoiceHeadingDetails'>
+						Customer Name:{' '}
+						<span>
+							{props?.order?.customer?.fname} {props?.order?.customer?.lname}
+						</span>
+					</h6>
 					<hr />
-					{
-						orderList.map((item, key) => (
-							<div className='invoiceItemCard' key={key}>
-								<p className='invoiceItemName'>{item.name}</p>
-								<div className='invoiceItemPrice'>
-									<p className='rupee'>{item.price}<span>✕</span>{item.quantity}</p>
-									<p className='rupee'>{item.price * item.quantity}</p>
-								</div>
+					{orderList.map((item, key) => (
+						<div className='invoiceItemCard' key={key}>
+							<p className='invoiceItemName'>{item.name}</p>
+							<div className='invoiceItemPrice'>
+								<p className='rupee'>
+									{item.price}
+									<span>✕</span>
+									{item.quantity}
+								</p>
+								<p className='rupee'>{item.price * item.quantity}</p>
 							</div>
-						))
-					}
+						</div>
+					))}
 				</div>
 				<div className='invoiceBill'>
-					<InvoiceBillItem name='Sub Total' amount={subTotal} />
+					<InvoiceBillItem name='Sub Total' amount={grandTotal} />
 					<div className='invoiceTaxes'>
-						{
-							taxList?.map?.((taxName, key) => {
-								return (<InvoiceBillItem key={key} name={taxName.name} taxPercent={taxName.value} amount={taxName.calculatedTax} />);
-							})
-						}
+						{taxList?.map?.((taxName, key) => {
+							return (
+								<InvoiceBillItem
+									key={key}
+									name={taxName.name}
+									taxPercent={taxName.value}
+									amount={taxName.calculatedTax}
+								/>
+							);
+						})}
 					</div>
 					<InvoiceBillItem name='Grand Total' amount={grandTotal} />
 				</div>
@@ -71,15 +109,15 @@ const Invoice = (props: TInvoiceProps) => {
 export default Invoice;
 
 type TInvoiceProps = {
-	order: TOrder
-}
+  order: TOrder;
+};
 
 type TOrder = {
 
-	// products:
-	// total
-	// orderTotal
-	// taxes
-	// invoiceNumber
-	// customer
-}
+  // products:
+  // total
+  // orderTotal
+  // taxes
+  // invoiceNumber
+  // customer
+};

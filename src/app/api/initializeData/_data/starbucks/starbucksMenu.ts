@@ -191,7 +191,7 @@ const coldBeverages = [
 	},
 	{
 		name: 'Chocolate Milkshake',
-		description: 'Our Restaurent signature chocolate perfected for you as a smooth and delightful milkshake. Happiness in every sip. Energy - Tall (354ml) - 632 kcal / Grande (473ml) - 825 kcal / Venti (591ml) 1050 kcal. Allergen - Contains Wheat, Milk, Soy. An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.',
+		description: 'Our Restaurant signature chocolate perfected for you as a smooth and delightful milkshake. Happiness in every sip. Energy - Tall (354ml) - 632 kcal / Grande (473ml) - 825 kcal / Venti (591ml) 1050 kcal. Allergen - Contains Wheat, Milk, Soy. An average active adult requires 2000 kcal energy per day, however, calorie needs may vary.',
 		category: 'Cold Beverages',
 		price: 295,
 		foodType: 'sweet',

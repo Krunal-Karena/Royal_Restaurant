@@ -1,18 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 
-import jsPDF from 'jspdf';
-import 'jspdf-html2canvas';
+import dynamic from 'next/dynamic'; // For dynamic imports (useful for Next.js or SSR setups).
 import { Button } from 'xtreme-ui';
 
 import './invoice.scss';
 
 const InvoiceBillItem = (props) => {
 	return (
-		<div className='invoiceBillItem'>
-			<p className='billName'>
+		<div className="invoiceBillItem">
+			<p className="billName">
 				{props.name + (props.taxPercent ? ` (${props.taxPercent}%)` : '')}
 			</p>
-			<p className='billAmount rupee'>{props.amount}</p>
+			<p className="billAmount rupee">{props.amount}</p>
 		</div>
 	);
 };
@@ -24,13 +23,21 @@ const Invoice = (props: TInvoiceProps) => {
 	const [subTotal, setSubTotal] = useState(0);
 	const [grandTotal, setGrandTotal] = useState(0);
 
-	const downloadPDF = () => {
+	const downloadPDF = async () => {
+		if (typeof window === 'undefined') {
+			console.error('PDF download is only available in the browser environment.');
+			return;
+		}
+
+		// Dynamically import jsPDF to avoid SSR issues
+		const jsPDF = (await import('jspdf')).default;
+
 		const pdf = new jsPDF();
 		const invoiceElement = invoiceRef?.current;
 		console.log('invoiceRef.current:', invoiceRef?.current);
 		if (!invoiceElement) {
 			console.error(
-				'invoiceRef is not defined or doesn\'t point to a valid DOM element.',
+				"invoiceRef is not defined or doesn't point to a valid DOM element.",
 			);
 			return;
 		}
@@ -57,13 +64,13 @@ const Invoice = (props: TInvoiceProps) => {
 	}, [props.order]);
 
 	return (
-		<div className='invoiceWrapper'>
-			<div className='invoice' ref={invoiceRef}>
-				<div className='invoiceItems'>
-					<h6 className='invoiceItemsHeading'>Your Order Summary</h6>
+		<div className="invoiceWrapper">
+			<div className="invoice" ref={invoiceRef}>
+				<div className="invoiceItems">
+					<h6 className="invoiceItemsHeading">Your Order Summary</h6>
 					<hr />
 					{/* <h6 align='left' className='invoiceHeadingDetails'>Invoice Number: <span>{props.order.invoiceNumber}</span></h6> */}
-					<h6 align='left' className='invoiceHeadingDetails'>
+					<h6 align="left" className="invoiceHeadingDetails">
 						Customer Name:{' '}
 						<span>
 							{props?.order?.customer?.fname} {props?.order?.customer?.lname}
@@ -71,22 +78,22 @@ const Invoice = (props: TInvoiceProps) => {
 					</h6>
 					<hr />
 					{orderList.map((item, key) => (
-						<div className='invoiceItemCard' key={key}>
-							<p className='invoiceItemName'>{item.name}</p>
-							<div className='invoiceItemPrice'>
-								<p className='rupee'>
+						<div className="invoiceItemCard" key={key}>
+							<p className="invoiceItemName">{item.name}</p>
+							<div className="invoiceItemPrice">
+								<p className="rupee">
 									{item.price}
 									<span>✕</span>
 									{item.quantity}
 								</p>
-								<p className='rupee'>{item.price * item.quantity}</p>
+								<p className="rupee">{item.price * item.quantity}</p>
 							</div>
 						</div>
 					))}
 				</div>
-				<div className='invoiceBill'>
-					<InvoiceBillItem name='Sub Total' amount={grandTotal} />
-					<div className='invoiceTaxes'>
+				<div className="invoiceBill">
+					<InvoiceBillItem name="Sub Total" amount={grandTotal} />
+					<div className="invoiceTaxes">
 						{taxList?.map?.((taxName, key) => {
 							return (
 								<InvoiceBillItem
@@ -98,9 +105,9 @@ const Invoice = (props: TInvoiceProps) => {
 							);
 						})}
 					</div>
-					<InvoiceBillItem name='Grand Total' amount={grandTotal} />
+					<InvoiceBillItem name="Grand Total" amount={grandTotal} />
 				</div>
-				<Button className='invoiceDownload' icon='f354' onClick={downloadPDF} />
+				<Button className="invoiceDownload" icon="f354" onClick={downloadPDF} />
 			</div>
 		</div>
 	);
@@ -109,15 +116,14 @@ const Invoice = (props: TInvoiceProps) => {
 export default Invoice;
 
 type TInvoiceProps = {
-  order: TOrder;
+	order: TOrder;
 };
 
 type TOrder = {
-
-  // products:
-  // total
-  // orderTotal
-  // taxes
-  // invoiceNumber
-  // customer
+	products: { name: string; price: number; quantity: number }[];
+	total: number;
+	orderTotal: number;
+	taxes: { name: string; value: number; calculatedTax: number }[];
+	invoiceNumber: string;
+	customer: { fname: string; lname: string };
 };

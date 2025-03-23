@@ -44,7 +44,7 @@ RoyalRestaurant has two interfaces, one for **customers** and one for **restaura
 		</td>
 		<td width="200px">
 			<p align="center">
-			![Table-1.png](https://github.com/Tirth29/Royal_Restaurant/assets/97218429/6dedb482-ba1f-4470-9e9b-42d25a31c7d8)
+				<img src="https://github.com/Tirth29/Royal_Restaurant/assets/97218429/6dedb482-ba1f-4470-9e9b-42d25a31c7d8" >
 			</p>
 		</td>
 	</tr>
